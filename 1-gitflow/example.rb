@@ -1,6 +1,9 @@
 require 'sinatra'
 
 get '/:year' do
-  """<h1>Is It #{params[:year]} yet?</h1>
-  <h2>NO</h2>"""
+  answer = "NO"
+  year = params[:year]
+  answer = "YES" if year.to_i <= Time.now.year
+  """<h1>Is It #{year} yet?</h1>
+  <h2>#{answer}</h2>"""
 end
