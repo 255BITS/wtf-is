@@ -1,6 +1,8 @@
 require 'sinatra'
 
 get '/:year' do
-  """<h1>Is It #{params[:year]} yet?</h1>
-  <h2>NO</h2>"""
+  answer = "NO"
+  year = params[:year]
+  """<h1>Is It #{year} yet?</h1>
+  <h2>#{answer}</h2>"""
 end
